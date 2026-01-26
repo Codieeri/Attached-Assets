@@ -67,7 +67,11 @@ export default function Onboarding() {
               <div className={`w-64 h-64 mb-12 rounded-3xl glass-card flex items-center justify-center relative ${steps[currentStep].glow}`}>
                 {/* Simulated Holographic Effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                <steps[currentStep].icon className={`w-32 h-32 ${steps[currentStep].color}`} strokeWidth={1} />
+                {(() => {
+                  const Icon = steps[currentStep].icon;
+                  return <Icon className="w-32 h-32" />;
+                })()}
+
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-4 leading-tight">

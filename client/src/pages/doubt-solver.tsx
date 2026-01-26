@@ -50,10 +50,17 @@ export default function DoubtSolver() {
     // Mock AI response
     setTimeout(() => {
       setIsTyping(false);
+      let responseContent = "Here's a step-by-step breakdown of that concept. In quantum mechanics, the wave function describes the quantum state of an isolated quantum system...";
+      
+      const query = inputValue.toLowerCase();
+      if (query.includes("kinetic energy")) {
+        responseContent = "Kinetic energy is the energy an object possesses due to its motion. It's defined as the work needed to accelerate a body of a given mass from rest to its stated velocity. \n\nFormula: KE = ½mv² \nWhere: \n- m = mass of the object \n- v = velocity of the object";
+      }
+
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'ai',
-        content: "Here's a step-by-step breakdown of that concept. In quantum mechanics, the wave function describes the quantum state of an isolated quantum system...",
+        content: responseContent,
         timestamp: new Date(),
         type: 'solution'
       }]);
