@@ -2,33 +2,36 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Brain, Calendar, TrendingUp } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { ChevronRight, Brain, CalendarDays, BarChart3, Sparkles } from "lucide-react";
 
 const steps = [
   {
-    id: 1,
     title: "Solve Doubts Instantly",
-    description: "Snap a photo or type your question. Our AI explains complex topics in seconds.",
+    description: "Ask anything and get step-by-step answers like a pro tutor.",
     icon: Brain,
     color: "text-primary",
     glow: "shadow-[0_0_30px_-5px_var(--color-primary)]"
   },
   {
-    id: 2,
-    title: "Smart Timetables",
-    description: "Auto-generate personalized study schedules based on your exams and weak areas.",
-    icon: Calendar,
+    title: "Auto Timetable Generator",
+    description: "Get a smart study plan based on your subjects and free time.",
+    icon: CalendarDays,
     color: "text-secondary",
     glow: "shadow-[0_0_30px_-5px_var(--color-secondary)]"
   },
   {
-    id: 3,
-    title: "Track Your Growth",
-    description: "Visualize your progress with detailed analytics and insights to stay ahead.",
-    icon: TrendingUp,
+    title: "Track Progress with Graphs",
+    description: "See your weekly study progress, accuracy and performance.",
+    icon: BarChart3,
     color: "text-pink-500",
     glow: "shadow-[0_0_30px_-5px_pink]"
+  },
+  {
+    title: "Generate Diagrams & Images",
+    description: "Create mindmaps, flowcharts and labelled diagrams using AI.",
+    icon: Sparkles,
+    color: "text-cyan-400",
+    glow: "shadow-[0_0_30px_-5px_var(--color-neon-cyan)]"
   }
 ];
 
