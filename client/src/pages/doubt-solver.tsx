@@ -27,6 +27,13 @@ export default function DoubtSolver() {
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const suggestions = [
+    { text: "What is kinetic energy?", icon: "⚡" },
+    { text: "Explain photosynthesis", icon: "🌱" },
+    { text: "Solve: 2x + 5 = 15", icon: "🔢" },
+    { text: "Write a summary of Romeo & Juliet", icon: "📚" },
+  ];
+
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -137,6 +144,28 @@ export default function DoubtSolver() {
               </div>
             </motion.div>
           ))}
+
+          {messages.length === 1 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto pt-8">
+              {suggestions.map((suggestion, index) => (
+                <motion.button
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => {
+                    setInputValue(suggestion.text);
+                  }}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all text-left group"
+                >
+                  <span className="text-xl group-hover:scale-110 transition-transform">{suggestion.icon}</span>
+                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">
+                    {suggestion.text}
+                  </span>
+                </motion.button>
+              ))}
+            </div>
+          )}
 
           {isTyping && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-4">
