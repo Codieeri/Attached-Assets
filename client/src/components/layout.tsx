@@ -123,7 +123,10 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto h-screen relative z-10 pt-16 md:pt-0">
-        <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className={cn(
+          "p-4 md:p-8 max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500",
+          location === "/doubt-solver" && "max-w-none h-screen p-0 md:p-4 space-y-0"
+        )}>
           {children}
         </div>
       </main>

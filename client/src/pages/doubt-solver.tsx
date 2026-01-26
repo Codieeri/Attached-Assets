@@ -76,7 +76,7 @@ export default function DoubtSolver() {
 
   return (
     <Layout>
-      <div className="h-[calc(100vh-8rem)] flex flex-col glass-card rounded-2xl border border-white/5 overflow-hidden relative">
+      <div className="h-[calc(100vh-2rem)] md:h-[calc(100vh-4rem)] flex flex-col glass-card rounded-2xl border border-white/5 overflow-hidden relative">
         {/* Chat Header */}
         <div className="p-4 border-b border-white/5 bg-white/5 backdrop-blur-xl flex items-center justify-between z-10">
           <div className="flex items-center gap-3">
